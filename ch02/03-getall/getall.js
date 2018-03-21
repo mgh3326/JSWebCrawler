@@ -32,9 +32,9 @@ function downloadRec(url, level) {
     if (url.indexOf(base) < 0) return;
 
     // HTML 을 취득
-    client.fetch(url, {}, function(err, $, res) {
+    client.fetch(url, {}, function (err, $, res) {
         // 링크된 페이지를 취득
-        $("a").each(function(idx) {
+        $("a").each(function (idx) {
             // <a> 태그의 링크를 획득
             var href = $(this).attr('href');
             if (!href) return;
@@ -48,8 +48,8 @@ function downloadRec(url, level) {
         });
 
         // 페이지 저장 (파일명 지정)
-        if (url.substr(url.length-1, 1) == '/') {
-           url += "index.html"; // 인덱스 자동 추가
+        if (url.substr(url.length - 1, 1) == '/') {
+            url += "index.html"; // 인덱스 자동 추가
         }
 
         var savepath = url.split("/").slice(2).join("/");
@@ -63,7 +63,7 @@ function downloadRec(url, level) {
 function checkSaveDir(fname) {
     // 디렉터리 부분만 검출
     var dir = path.dirname(fname);
-    
+
     // 디렉토리를 재귀적으로 생성
     var dirlist = dir.split("/");
     var p = "";
