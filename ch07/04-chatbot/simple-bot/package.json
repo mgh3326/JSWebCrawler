@@ -6,7 +6,7 @@
   "author": "kujirahand",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "^2.0.35"
+    "mongodb": "^3.6.1"
   }
 }
 
